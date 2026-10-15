@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#101821"><title>CITY CRIME: OPEN WORLD</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="game"></div>
+<div id="loading"><div class="logo">CITY CRIME<span>: OPEN WORLD</span></div><p>Building the city…</p></div>
+<div id="mainMenu" class="overlay"><div class="panel hero"><div class="eyebrow">NEON DISTRICT • OPEN WORLD</div><h1>CITY CRIME</h1><p>Own the streets. Build your story.</p><button id="newGame">NEW GAME</button><button id="continueGame" class="secondary">CONTINUE</button><button id="helpBtn" class="secondary">CONTROLS & HELP</button><div id="helpText" class="hidden">WASD move/drive · Shift sprint · E enter / interact · F exit vehicle · M map · Tab missions · Esc pause. On mobile, use the left joystick and right-side drag zone.</div></div></div>
+<div id="pauseMenu" class="overlay hidden"><div class="panel"><h2>PAUSED</h2><button id="resumeBtn">RESUME</button><button id="pauseMap" class="secondary">CITY MAP</button><button id="saveBtn" class="secondary">SAVE GAME</button><button id="settingsBtn" class="secondary">GRAPHICS & AUDIO</button><button id="backMenu" class="secondary">MAIN MENU</button></div></div>
+<div id="settings" class="overlay hidden"><div class="panel"><h2>SETTINGS</h2><label>Graphics <select id="quality"><option value="low">Low (mobile)</option><option value="medium" selected>Medium</option><option value="high">High (desktop)</option></select></label><label>Render scale <input id="scale" type="range" min=".55" max="1" step=".05" value=".85"></label><label><input id="shadows" type="checkbox"> Shadows</label><label>Sound <input id="volume" type="range" min="0" max="1" step=".05" value=".5"></label><button id="settingsClose">DONE</button></div></div>
+<div id="mapOverlay" class="overlay hidden"><div class="panel mapPanel"><h2>CITY MAP <small>Press M to close</small></h2><canvas id="bigMap" width="640" height="640"></canvas><button id="closeMap">BACK TO CITY</button></div></div>
+<div id="hud" class="hidden">
+  <div class="topline"><div class="brand">CITY CRIME <span>OPEN WORLD</span></div><div class="money">$<b id="money">750</b></div><div class="clock" id="clock">08:00</div></div>
+  <div class="leftHud"><div class="health"><span>HEALTH</span><div><i id="healthFill"></i></div></div><div class="wanted" id="wanted">☆☆☆☆☆</div><div class="missionBox"><small>ACTIVE OBJECTIVE</small><b id="missionTitle">First Steps</b><span id="missionDesc">Explore the city.</span><span id="distance">—</span></div></div>
+  <div class="rightHud"><canvas id="miniMap" width="180" height="180"></canvas><div id="vehicleInfo" class="vehicleInfo hidden"><b id="vehicleName">City Compact</b><span><strong id="speed">0</strong> KM/H</span><span>CONDITION <b id="carHealth">100%</b></span></div></div>
+  <div id="toast"></div><div id="interactionHint">E · INTERACT</div>
+  <div class="bottomHelp">WASD MOVE · SHIFT RUN · E ENTER / INTERACT · F EXIT · M MAP · TAB MISSIONS · ESC MENU</div>
+  <div id="missionPanel" class="hidden"><div class="panel"><h2>MISSIONS</h2><div id="missionList"></div><button id="missionClose">CLOSE</button></div></div>
+  <div id="mobileControls">
+    <div id="stickZone"><div id="stick"><i></i></div></div>
+    <div id="lookZone"></div>
+    <div class="mobileButtons"><button id="runBtn">RUN</button><button id="interactBtn">ENTER</button><button id="exitBtn">EXIT</button><button id="brakeBtn">BRAKE</button><button id="cameraBtn">CAM</button><button id="mapBtn">MAP</button></div>
+  </div>
+</div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="./js/main.js"></script>
+</body></html>
